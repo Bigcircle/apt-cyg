@@ -369,7 +369,12 @@ case "$command" in
     fi
 
     echo "Unpacking..."
-    cat $file | bunzip2 | tar > "/etc/setup/$pkg.lst" xvf - -C /
+    if [ "${file##*.}--" = "xz" ]
+    then
+      cat $file | tar > "/etc/setup/$pkg.lst" xvfJ - -C /
+    else
+      cat $file | bunzip2 | tar > "/etc/setup/$pkg.lst" xvf - -C /
+    fi
     gzip -f "/etc/setup/$pkg.lst"
     cd ../..
 
