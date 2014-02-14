@@ -1,4 +1,5 @@
-apt-cyg
+apt-cyg - fork from official project [apt-cyg](https://code.google.com/p/apt-cyg/)
+
 =======
 
 apt-cyg is a command-line installer for Cygwin which cooperates with Cygwin Setup and uses the same repository. The syntax is similar to apt-get. Usage examples:
@@ -9,20 +10,22 @@ apt-cyg is a command-line installer for Cygwin which cooperates with Cygwin Setu
 * "apt-cyg show" to show installed packages
 * "apt-cyg find <pattern(s)>" to find packages matching patterns
 * "apt-cyg describe <pattern(s)>" to describe packages matching patterns
-* "apt-cyg packageof <commands or files>" to locate parent packages 
+* "apt-cyg packageof <commands or files>" to locate parent packages
 
 Quick start
 -----------
 
 apt-cyg is a simple script. Once you have a copy, make it executable:
 
-  # chmod +x /bin/apt-cyg
+  # cp apt-cyg /usr/bin/apt-cyg && chmod +x /usr/bin/apt-cyg
 
 Optionally place apt-cyg in a bin/ folder on your path.
 
-Then use apt-cyg, for example:
+For easy use, alias it. And then use apt-cyg, for example:
 
-  # apt-cyg install nano
+  # alias aa="apt-cyg"
+
+  # aa install nano
 
 Contributing
 ------------
